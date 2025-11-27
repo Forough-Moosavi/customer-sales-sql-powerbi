@@ -1,28 +1,15 @@
 # 📘 Customer Churn Analysis – SQL + Python (ML) + Power BI  
-An end-to-end analytics project that identifies churn-prone customers, predicts churn probability using Machine Learning, segments customers by risk, and visualizes actionable insights for business decision-making.
-
----
-
-# 👩‍💻 About Me  
-**Forough S. Moosavi**  
-**Data Analyst | SQL | Power BI | Excel | Python**
-
-Experienced in building end-to-end analytics projects: from data cleaning to dashboards.  
-Focused on business-oriented insights, not just charts.  
-Open to Data Analyst / BI roles and freelance opportunities.
-
-📧 **Email:** forooghmousavi1371@gmail.com  
-🔗 **GitHub:** https://github.com/Forough-Moosavi  
+An end-to-end analytics project identifying churn-prone customers, predicting churn probability using Machine Learning, segmenting customers by risk, and visualizing insights for business decision-making.
 
 ---
 
 # 🧩 1. Business Problem  
 A telecom company wants to:
 
-- Identify which customers are likely to churn  
-- Understand churn behavior across segments  
+- Identify customers likely to churn  
+- Understand churn patterns across segments  
 - Build a dashboard for management  
-- Get actionable insights (e.g., contract type, risk level, revenue patterns)
+- Generate actionable insights (contract type, risk levels, revenue impact)
 
 This project delivers the **full pipeline** from raw data → SQL → ML → Power BI.
 
@@ -58,9 +45,9 @@ This project delivers the **full pipeline** from raw data → SQL → ML → Pow
 ---
 
 # 🗄️ 3. SQL – Data Preparation  
-All SQL scripts are in the **/sql** folder.
+All SQL scripts are located in the **/sql** directory.
 
-Example: **Create View for ML model**
+### Example: Creating a feature view for ML
 
 ```sql
 CREATE VIEW customer_features AS
@@ -77,50 +64,41 @@ SELECT
 FROM customers;
 ```
 
-SQL tasks completed:
-
-- Extract data from database  
-- Create analytical views  
-- Compute churn rates  
-- Group churn by contract type, payment method  
-- Prepare customer feature table for ML  
-
 ---
 
 # 🧼 4. Python – Data Cleaning & ML Pipeline  
 
-### **Cleaning steps:**
+### **Cleaning Steps**
 - Removed missing values  
 - Converted TotalCharges & MonthlyCharges → float  
-- Standardized ChurnFlag to (0/1)  
+- Standardized ChurnFlag to binary (0/1)  
 - Removed outliers  
-- One-hot encoded categorical variables  
-- Scaled numeric features  
-- Train/test split (stratified)  
+- One‑hot encoded categorical variables  
+- Scaled numerical features  
+- Applied stratified train-test split  
 
 ### **Machine Learning**
-- Model: **Logistic Regression**  
-- Predicts **Churn Probability**  
-- Creates **Risk Segments**:
-  - Low Risk  
-  - Medium Risk  
-  - High Risk  
+- **Logistic Regression** used for prediction  
+- Outputs:  
+  - **Churn Probability**  
+  - **Risk Segments**: Low, Medium, High  
 
-Output saved to:  
+Output stored in:  
 `data/churn_scores.csv`
 
 ---
 
 # 📊 5. Power BI Dashboard  
+
 File: `powerbi/Customer Churn Analysis.pbix`
 
 Dashboard includes:
 
 - KPI Cards  
-- Churn Rate by Contract Type  
-- Customer Risk Distribution  
-- Interactive Slicers  
-- Customer table with charges & churn probability  
+- Churn by Contract Type  
+- Risk Segment Distribution  
+- Slicers  
+- Customer-level probability table  
 
 ### **Dashboard Preview**
 ![Dashboard](dashboard.png)
@@ -129,35 +107,35 @@ Dashboard includes:
 
 # 🔥 6. Business Insights (Executive Summary)
 
-### **1) Month-to-Month Customers Have the Highest Churn Risk**
+### **1) Month‑to‑Month Customers Have the Highest Churn**
 - **Churn Rate = 31.8%**  
-These customers cancel early and often.  
+These customers cancel early.  
 **Recommendation:** Offer retention incentives & loyalty programs.
 
 ---
 
-### **2) Long-Term Contracts Strongly Reduce Churn**
-- **Two-year contract churn ≈ 11% (Lowest)**
-- **One-year contract churn ≈ 15%**
+### **2) Long‑Term Contracts Reduce Churn Significantly**
+- **Two‑year contract churn ≈ 11% (lowest)**  
+- **One‑year contract churn ≈ 15%**
 
 ➡ **Correct order:**  
-**Two-year < One-year < Month-to-Month**
+**Two‑year < One‑year < Month‑to‑Month**
 
 ---
 
-### **3) Customer Tenure Is a Strong Churn Predictor**
+### **3) Customer Tenure Is a Key Predictor**
 New customers churn far more frequently.  
-**Recommendation:** Focus on onboarding & early engagement.
+**Recommendation:** Improve onboarding & early engagement.
 
 ---
 
 ### **4) Most Customers Are Medium Risk (0.30–0.60)**  
-Ideal group for proactive retention strategies.
+Ideal target for proactive retention strategies.
 
 ---
 
 ### **5) No Customers Classified as High Risk**  
-Model produced stable churn probabilities.
+Model predictions are stable; dataset contains fewer extreme churn cases.
 
 ---
 
@@ -174,16 +152,30 @@ Open `Customer Churn Analysis.pbix` (inside /powerbi)
 
 ---
 
-# 🙌 Final Notes  
+# 🙌 8. Final Notes  
+
 This project demonstrates:
 
 - SQL Querying  
-- Machine Learning Workflow  
-- Real-World Data Cleaning  
+- End‑to‑End Machine Learning Workflow  
+- Real‑World Data Cleaning  
 - Feature Engineering  
 - Churn Probability Modeling  
-- Power BI Dashboard Design  
-- Professional GitHub Structure  
+- Power BI Dashboard Development  
+- Professional GitHub Structuring  
 
 Perfect for **Data Analyst, BI Analyst, and Junior Data Scientist** roles.
 
+---
+
+# 👩‍💻 About Me  
+
+**Forough S. Moosavi**  
+**Data Analyst | SQL | Power BI | Excel | Python**
+
+Experienced in building end‑to‑end analytics projects: from data cleaning to dashboards.  
+Focused on business‑driven insights, not just charts.  
+Open to Data Analyst / BI roles and freelance opportunities.
+
+📧 **Email:** forooghmousavi1371@gmail.com  
+🔗 **GitHub:** https://github.com/Forough-Moosavi  
